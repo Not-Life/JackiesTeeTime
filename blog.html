@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jackie's Tee Time – Blog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="nav-brand"><a href="index.html">Jackie's Tee Time</a></div>
+        <nav class="nav-links">
+          <a class="nav-link" href="index.html">Shop</a>
+          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <button id="openCartBtn" class="btn" style="font-size:0.875rem; padding:0.5rem 0.75rem;">
+          Cart (<span id="cart-count">0</span>)
+        </button>
+      </div>
+    </header>
+    <main class="main">
+      <section class="container">
+        <h1 style="font-size:2rem; font-weight:700; margin:1rem 0;">Medical Assisting Blog</h1>
+        <p style="color:var(--color-muted); max-width:600px; margin-bottom:1.5rem;">
+          Read tips, interesting facts and personal stories from the world of medical assisting.
+        </p>
+        <button id="toggleAddPostBtn" class="btn btn-secondary" style="margin-bottom:1rem;">New post</button>
+        <form id="addPostForm" class="add-post-form hidden">
+          <h3 style="margin-top:0;">Create a new post</h3>
+          <input type="text" id="postTitle" placeholder="Title" required />
+          <input type="date" id="postDate" />
+          <input type="text" id="postTags" placeholder="Tags (comma separated)" />
+          <input type="text" id="postSummary" placeholder="1–2 sentence summary" required />
+          <textarea id="postContent" rows="5" placeholder="Write your post here..." required></textarea>
+          <button type="submit">Publish</button>
+        </form>
+        <div id="postList" class="blog-list"></div>
+      </section>
+    </main>
+    <!-- Cart Drawer shared across pages -->
+    <aside class="cart-drawer">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCartBtn" class="btn btn-secondary" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Close</button>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <span class="cart-subtotal">$0.00</span>
+        </div>
+        <button class="btn" style="width:100%;">Checkout</button>
+        <p style="font-size:0.75rem; margin-top:0.5rem; color:var(--color-muted);">Demo only — payments disabled.</p>
+      </div>
+    </aside>
+    <footer>
+      © <script>document.write(new Date().getFullYear());</script> Jackie's Tee Time. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+  </body>
+</html>

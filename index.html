@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jackie's Tee Time– Shop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="nav-brand"><a href="index.html">Jackie's Tee Time</a></div>
+        <nav class="nav-links">
+          <a class="nav-link" href="index.html">Shop</a>
+          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <button id="openCartBtn" class="btn" style="font-size:0.875rem; padding:0.5rem 0.75rem;">
+          Cart (<span id="cart-count">0</span>)
+        </button>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero">
+        <h1>Apparel for Medical Assistants</h1>
+        <p>
+          Comfortable, clinic‑ready tees with designs inspired by everyday MA excellence.
+          Built for busy shifts, crafted for off‑duty style.
+        </p>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center;">
+          <a href="#productGrid" class="btn">Shop now</a>
+          <a href="blog.html" class="btn btn-secondary">Read blog</a>
+        </div>
+      </section>
+      <section class="container">
+        <h2 style="font-size:1.5rem; font-weight:600; margin-top:2rem;">Featured Tees</h2>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+    </main>
+    <!-- Cart Drawer -->
+    <aside class="cart-drawer">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCartBtn" class="btn btn-secondary" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Close</button>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <span class="cart-subtotal">$0.00</span>
+        </div>
+        <button class="btn" style="width:100%;">Checkout</button>
+        <p style="font-size:0.75rem; margin-top:0.5rem; color:var(--color-muted);">Demo only — payments disabled.</p>
+      </div>
+    </aside>
+    <footer>
+      © <script>document.write(new Date().getFullYear());</script> Jackie's Tee Time. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Render products on shop page
+        renderProducts();
+      });
+    </script>
+  </body>
+</html>

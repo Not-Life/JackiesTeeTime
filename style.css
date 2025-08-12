@@ -1,0 +1,456 @@
+/* Global styles for the MedAssist Tees e‑commerce site */
+
+/* CSS Custom Properties for easy theme tweaking */
+:root {
+  --color-primary: #111827; /* Dark gray for text */
+  --color-secondary: #f9fafb; /* Light background */
+  --color-accent: #2563eb; /* Blue accent for buttons and links */
+  --color-muted: #6b7280; /* Muted gray for secondary text */
+  --radius-base: 8px;
+  --shadow-base: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background: var(--color-secondary);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-base);
+  font-size: 0.875rem;
+}
+
+.nav-link:hover {
+  background: #f3f4f6;
+}
+
+.main {
+  flex: 1;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  background: linear-gradient(to bottom, #f9fafb, #ffffff);
+  padding: 3rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hero img {
+  max-width: 100%;
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-base);
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-muted);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-base);
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #1f2937;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--color-primary);
+  border: 1px solid #e5e7eb;
+}
+
+.btn-secondary:hover {
+  background: #f3f4f6;
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-base);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.product-card p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.product-meta {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-bottom: 0.75rem;
+}
+
+.variant-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.variant-select label {
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+}
+
+.variant-select select {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-base);
+  border: 1px solid #d1d5db;
+  font-size: 0.875rem;
+}
+
+.product-card .add-btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Cart drawer */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  background: #ffffff;
+  border-left: 1px solid #e5e7eb;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.05);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+.cart-header {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-base);
+  padding: 0.75rem;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--radius-base);
+}
+
+.cart-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cart-item-info .title {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cart-item-info .details {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.cart-item-controls button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cart-footer {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.cart-footer .subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Blog */
+.blog-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.post {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-base);
+  padding: 1rem;
+  box-shadow: var(--shadow-base);
+}
+
+.post h3 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.post .meta {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-bottom: 0.75rem;
+}
+
+.post summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.post details[open] summary {
+  margin-bottom: 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: #eef2ff;
+  color: #4f46e5;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-base);
+}
+
+.add-post-form {
+  margin-top: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-base);
+  padding: 1rem;
+  box-shadow: var(--shadow-base);
+}
+
+.add-post-form input,
+.add-post-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-base);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.add-post-form button {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-base);
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.add-post-form button:hover {
+  background: #1f2937;
+}
+
+/* About & Contact */
+.page-section {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-base);
+  padding: 2rem;
+  box-shadow: var(--shadow-base);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-base);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-form button {
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-base);
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.contact-form button:hover {
+  background: #1f2937;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  background: #ffffff;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* Utility class to toggle visibility */
+.hidden {
+  display: none !important;
+}

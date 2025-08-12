@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jackie's Tee Time – About</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="nav-brand"><a href="index.html">Jackie's Tee Time</a></div>
+        <nav class="nav-links">
+          <a class="nav-link" href="index.html">Shop</a>
+          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <button id="openCartBtn" class="btn" style="font-size:0.875rem; padding:0.5rem 0.75rem;">
+          Cart (<span id="cart-count">0</span>)
+        </button>
+      </div>
+    </header>
+    <main class="main">
+      <section class="container">
+        <div class="page-section">
+          <h1 style="font-size:2rem; font-weight:700; margin-top:0;">About Us</h1>
+          <p>
+            Jackie's Tee Time was born from a love of healthcare and design. We create apparel
+            specifically for medical assistants—comfortable, durable shirts that look great
+            inside and outside the clinic. Our designs celebrate the everyday heroes in
+            healthcare, with subtle details that speak to your work ethic and pride.
+          </p>
+          <p>
+            Each shirt is printed on demand to reduce waste and ensure you get the size and
+            color that fits you best. Whether you’re working a long shift or enjoying your
+            downtime, we hope our tees make you feel confident and comfortable.
+          </p>
+          <p>
+            Have an idea for a design or feedback about our products? We’d love to hear
+            from you. Reach out via our contact page or through social media. Thank you
+            for supporting a small business that’s passionate about medical assistants!
+          </p>
+        </div>
+      </section>
+    </main>
+    <!-- Cart Drawer -->
+    <aside class="cart-drawer">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCartBtn" class="btn btn-secondary" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Close</button>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <span class="cart-subtotal">$0.00</span>
+        </div>
+        <button class="btn" style="width:100%;">Checkout</button>
+        <p style="font-size:0.75rem; margin-top:0.5rem; color:var(--color-muted);">Demo only — payments disabled.</p>
+      </div>
+    </aside>
+    <footer>
+      © <script>document.write(new Date().getFullYear());</script> Jackie's Tee Time. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
